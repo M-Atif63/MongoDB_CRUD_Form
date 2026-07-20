@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="/studentDetails.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="avatar">
+                🎓
+            </div>
+
+            <% student.map((studentDetail)=>{ %>
+
+                <div class="header">
+
+                    <div class="avatar">
+                        🎓
+                    </div>
+
+                    <h1>
+                        <%= studentDetail.first_name %>
+                            <%= studentDetail.last_name %>
+                    </h1>
+
+                    <p>Student Profile</p>
+
+                </div>
+
+
+                <div class="details">
+
+                    <div class="row">
+                        <span class="label">First Name</span>
+                        <span class="value">
+                            <%= studentDetail.first_name %>
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Last Name</span>
+                        <span class="value">
+                            <%= studentDetail.last_name %>
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Age</span>
+                        <span class="value">
+                            <%= studentDetail.age %> Years
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Class</span>
+                        <span class="value">
+                            <%= studentDetail.class %>
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Roll Number</span>
+                        <span class="value">
+                            <%= studentDetail.roll_number %>
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Gender</span>
+                        <span class="value">
+                            <%= studentDetail.gender %>
+                        </span>
+                    </div>
+
+
+                    <div class="row">
+                        <span class="label">Email</span>
+                        <span class="value">
+                            <%= studentDetail.email %>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Phone</span>
+                        <span class="value">
+                            <%= studentDetail.phone %>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Address</span>
+                        <span class="value">
+                            <%= studentDetail.address %>
+                        </span>
+                    </div>
+                </div>
+                <% }) %>
+                    <div class="buttons">
+
+                        <a href="edit-student.html" class="btn edit">
+                            Edit
+                        </a>
+
+                        <a href="students.html" class="btn back">
+                            Back
+                        </a>
+
+                    </div>
+
+        </div>
+
+</body>
+
+</html>

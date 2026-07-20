@@ -8,6 +8,9 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 
+app.set('view engine','ejs')
+app.use(express.urlencoded({extended:false}))
+app.use(express.static('public'))
 
 connectDB()
 

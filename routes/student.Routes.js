@@ -1,14 +1,14 @@
 import express from 'express'
-import { showStudent, students } from '../constroller/student.Conroller.js'
+import { addStudents, addStudentsPage, showStudent, students } from '../constroller/student.Conroller.js'
 const router = express.Router()
 
-router.get('/',students)
+router.get('/students',students)
 
-router.get('/student/:id',showStudent)
+router.get('/students/:id',showStudent)
 
-// router.get('/add-students',addStudentsPage)
+router.get('/add-students',addStudentsPage)
 
-// router.post('/add-students',addStudents)
+router.post('/add-students',addStudents)
 
 // router.get('/update-students/:id',updateStudentsPage)
 
