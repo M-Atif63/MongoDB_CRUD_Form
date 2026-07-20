@@ -1,92 +1,49 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f1f5f9;
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
 }
 
 .container {
-    max-width: 700px;
-    margin: 30px auto;
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.header {
+h2 {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.avatar {
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 60px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.header h1 {
-    color: #1e293b;
-    margin: 15px 0 5px;
-}
-
-.header p {
-    color: #64748b;
-}
-
-.details {
-    margin-top: 25px;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    margin-bottom: 10px;
-    background: #f8fafc;
-    border-radius: 10px;
-}
-
-.label {
-    font-weight: bold;
-    color: #334155;
-}
-
-.value {
-    color: #475569;
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .buttons {
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .btn {
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    border-radius: 10px;
     text-decoration: none;
+    padding: 10px 20px;
     color: white;
-    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 5px;
 }
 
 .edit {
-    background: #16a34a;
+    background: green;
 }
 
 .back {
-    background: #2563eb;
-}
-
-.btn:hover {
-    opacity: 0.85;
+    background: #0b5ed7;
 }

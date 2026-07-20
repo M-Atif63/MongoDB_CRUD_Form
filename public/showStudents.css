@@ -99,3 +99,38 @@ table tbody tr:hover{
         flex-direction:column;
     }
 }
+
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.view {
+    background-color: #0b5ed7;
+}
+
+.update {
+    background-color: green;
+    color: white;
+}
+
+.delete {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}

@@ -72,9 +72,18 @@
                                             <%= student.gender %>
                                         </td>
                                         <td class="actions">
-                                            <a href="/students/<%= student.id%>">See Details</a>
-                                            <a href="/update:id">Update</a>
-                                            <a href="/delete:id">Delete</a>
+                                            <a href="/students/<%= student.id %>" class="btn view">
+                                                👁 View
+                                            </a>
+
+                                            <a href="/update-students/<%= student.id %>" class="btn update">
+                                                🖋 Update
+                                            </a>
+
+                                            <a href="/delete-student/<%= student.id %>" class="btn delete"
+                                                onclick="return confirm('Are you sure you want to delete this student?')">
+                                                🗑 Delete
+                                            </a>
                                         </td>
                                     </tr>
                                     <% }) %>

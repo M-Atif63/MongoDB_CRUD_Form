@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="/addNewStudents.css">
+</head>
+
+<body>
+    <div class="container">
+
+    <div class="card">
+
+        <h2>🎓 Student Registration Form</h2>
+        <p class="subtitle">Fill in the student details below.</p>
+
+        <% if (message) { %>
+            <div class="alert success">
+                <%= message %>
+            </div>
+        <% } %>
+
+
+        <form action="/update-students/<%= studentId.id%>" method="post">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name"
+                    placeholder="Enter First Name" value="<%= studentId.first_name %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name"
+                    placeholder="Enter Last Name" value="<%= studentId.last_name %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age"
+                    placeholder="Enter Age" value="<%= studentId.age %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <input type="number" id="class" name="class"
+                    placeholder="Enter Class" value="<%= studentId.class %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="roll_number">Roll Number</label>
+                    <input type="number" id="roll_number" name="roll_number"
+                    placeholder="Enter Roll Number" value="<%= studentId.roll_number %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="number" id="phone_number" name="phone"
+                    placeholder="Enter Phone Number" value="<%= studentId.phone %>" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email_address">Email Address</label>
+                    <input type="email" id="email_address" name="email"
+                    placeholder="Enter Email Address" value="<%= studentId.email %>"  required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address"
+                    placeholder="Enter Address" value="<%= studentId.address %>" required>
+                </div>
+
+
+
+                <div class="form-group full-width">
+
+                    <label>Gender</label>
+
+                    <div class="gender-box">
+                        <label>
+                            <input type="radio" name="gender" value="Male" required>
+                            Male
+                        </label>
+
+
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn-submit">
+                Register Student
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

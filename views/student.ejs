@@ -9,117 +9,71 @@
 </head>
 
 <body>
+  <% if (!studentData) { %>
 
-    <div class="container">
+    <h2>No Student Found</h2>
 
-        <div class="header">
+<% } else { %>
 
-            <div class="avatar">
-                🎓
-            </div>
+<div class="container">
 
-            <% student.map((studentDetail)=>{ %>
+    <h2>🎓 Student Profile</h2>
 
-                <div class="header">
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td><%= studentData.first_name %></td>
+        </tr>
 
-                    <div class="avatar">
-                        🎓
-                    </div>
+        <tr>
+            <td>Last Name</td>
+            <td><%= studentData.last_name %></td>
+        </tr>
 
-                    <h1>
-                        <%= studentDetail.first_name %>
-                            <%= studentDetail.last_name %>
-                    </h1>
+        <tr>
+            <td>Age</td>
+            <td><%= studentData.age %> Years</td>
+        </tr>
 
-                    <p>Student Profile</p>
+        <tr>
+            <td>Class</td>
+            <td><%= studentData.class %></td>
+        </tr>
 
-                </div>
+        <tr>
+            <td>Roll Number</td>
+            <td><%= studentData.roll_number %></td>
+        </tr>
 
+        <tr>
+            <td>Gender</td>
+            <td><%= studentData.gender %></td>
+        </tr>
 
-                <div class="details">
+        <tr>
+            <td>Email</td>
+            <td><%= studentData.email %></td>
+        </tr>
 
-                    <div class="row">
-                        <span class="label">First Name</span>
-                        <span class="value">
-                            <%= studentDetail.first_name %>
-                        </span>
-                    </div>
+        <tr>
+            <td>Phone</td>
+            <td><%= studentData.phone %></td>
+        </tr>
 
+        <tr>
+            <td>Address</td>
+            <td><%= studentData.address %></td>
+        </tr>
+    </table>
 
-                    <div class="row">
-                        <span class="label">Last Name</span>
-                        <span class="value">
-                            <%= studentDetail.last_name %>
-                        </span>
-                    </div>
+    <div class="buttons">
+        <a href="/update-students/<%= studentData.id %>" class="btn edit">Update</a>
+        <a href="/students" class="btn back">Back</a>
+    </div>
 
+</div>
 
-                    <div class="row">
-                        <span class="label">Age</span>
-                        <span class="value">
-                            <%= studentDetail.age %> Years
-                        </span>
-                    </div>
-
-
-                    <div class="row">
-                        <span class="label">Class</span>
-                        <span class="value">
-                            <%= studentDetail.class %>
-                        </span>
-                    </div>
-
-
-                    <div class="row">
-                        <span class="label">Roll Number</span>
-                        <span class="value">
-                            <%= studentDetail.roll_number %>
-                        </span>
-                    </div>
-
-
-                    <div class="row">
-                        <span class="label">Gender</span>
-                        <span class="value">
-                            <%= studentDetail.gender %>
-                        </span>
-                    </div>
-
-
-                    <div class="row">
-                        <span class="label">Email</span>
-                        <span class="value">
-                            <%= studentDetail.email %>
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="label">Phone</span>
-                        <span class="value">
-                            <%= studentDetail.phone %>
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="label">Address</span>
-                        <span class="value">
-                            <%= studentDetail.address %>
-                        </span>
-                    </div>
-                </div>
-                <% }) %>
-                    <div class="buttons">
-
-                        <a href="edit-student.html" class="btn edit">
-                            Edit
-                        </a>
-
-                        <a href="students.html" class="btn back">
-                            Back
-                        </a>
-
-                    </div>
-
-        </div>
-
+<% } %>
 </body>
 
 </html>
