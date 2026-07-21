@@ -59,6 +59,7 @@ export const updateStudentsPage = async (req, res) => {
     
     try {
         const studentId = await Student.findById(req.params.id)
+        if (!studentId) return res.render('pageNotFound', { message: "Student Not Found" })
         res.render('updateStudent', { message: null, studentId })
     } catch (error) {
         res.status(500).send(error.message)
@@ -72,7 +73,8 @@ export const updateStudents = async (req, res) => {
     }
     
     try {
-        await Student.findByIdAndUpdate(req.params.id, req.body)
+        const student = await Student.findByIdAndUpdate(req.params.id, req.body)
+        if (!student) return res.render('pageNotFound', { message: "Student Not Found" })
         res.redirect('/students')
     } catch (error) {
         res.status(500).send(error.messsage)
@@ -88,7 +90,8 @@ export const deleteStudent = async (req, res) => {
     
     try {
         const { id } = req.params
-        await Student.findByIdAndDelete(id);
+        const student = await Student.findByIdAndDelete(id);
+        if (!student) return res.render('pageNotFound', { message: "Student Not Found" })
         res.redirect('/students')
     } catch (error) {
         res.status(500).send(error.messsage)
