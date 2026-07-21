@@ -1,5 +1,5 @@
 import express from 'express'
-import { addStudents, addStudentsPage, showStudentPage, students, updateStudents, updateStudentsPage } from '../constroller/student.Controller.js'
+import { addStudents, addStudentsPage, deleteStudent, showStudentPage, students, updateStudents, updateStudentsPage } from '../constroller/student.Controller.js'
 const router = express.Router()
 
 router.get('/students',students)
@@ -13,5 +13,7 @@ router.post('/add-students',addStudents)
 router.get('/update-students/:id',updateStudentsPage)
 
 router.post('/update-students/:id',updateStudents)
+
+router.delete('/delete-student/:id',deleteStudent)
 
 export default router
