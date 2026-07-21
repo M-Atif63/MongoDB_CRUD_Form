@@ -58,13 +58,11 @@ export const updateStudentsPage = async (req,res) => {
 
 export const updateStudents = async (req,res) => {
     try {
-        const studentId = await Student.findById(res.params.id)
-        if(!studentId){
-            res.render('updateStudent',{message:"This Student does not exsist"})
-        }
-        await Student.updateOne(req.body)
-        res.render('updateStudent',{message:"Student Updated Successfully"})
+        await Student.findByIdAndUpdate(req.params.id,req.body)
+        res.redirect('/students')
     } catch (error) {
         res.status(500).send("Internal Server Error")
     }
 }
+
+
