@@ -9,71 +9,89 @@
 </head>
 
 <body>
-  <% if (!studentData) { %>
+    <% if (!studentData) { %>
+        <h2>404 Error</h2>
+        <h2>Student Not Found</h2>
 
-    <h2>No Student Found</h2>
+        <% } else { %>
 
-<% } else { %>
+            <div class="container">
 
-<div class="container">
+                <h2>🎓 Student Profile</h2>
 
-    <h2>🎓 Student Profile</h2>
+                <table>
+                    <tr>
+                        <td>First Name</td>
+                        <td>
+                            <%= studentData.first_name %>
+                        </td>
+                    </tr>
 
-    <table>
-        <tr>
-            <td>First Name</td>
-            <td><%= studentData.first_name %></td>
-        </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>
+                            <%= studentData.last_name %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Last Name</td>
-            <td><%= studentData.last_name %></td>
-        </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>
+                            <%= studentData.age %> Years
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Age</td>
-            <td><%= studentData.age %> Years</td>
-        </tr>
+                    <tr>
+                        <td>Class</td>
+                        <td>
+                            <%= studentData.class %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Class</td>
-            <td><%= studentData.class %></td>
-        </tr>
+                    <tr>
+                        <td>Roll Number</td>
+                        <td>
+                            <%= studentData.roll_number %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Roll Number</td>
-            <td><%= studentData.roll_number %></td>
-        </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <%= studentData.gender %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Gender</td>
-            <td><%= studentData.gender %></td>
-        </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <%= studentData.email %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Email</td>
-            <td><%= studentData.email %></td>
-        </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>
+                            <%= studentData.phone %>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>Phone</td>
-            <td><%= studentData.phone %></td>
-        </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>
+                            <%= studentData.address %>
+                        </td>
+                    </tr>
+                </table>
 
-        <tr>
-            <td>Address</td>
-            <td><%= studentData.address %></td>
-        </tr>
-    </table>
+                <div class="buttons">
+                    <a href="/update-students/<%= studentData.id %>" class="btn edit">Update</a>
+                    <a href="/students" class="btn back">Back</a>
+                </div>
 
-    <div class="buttons">
-        <a href="/update-students/<%= studentData.id %>" class="btn edit">Update</a>
-        <a href="/students" class="btn back">Back</a>
-    </div>
+            </div>
 
-</div>
-
-<% } %>
+            <% } %>
 </body>
 
 </html>
