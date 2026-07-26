@@ -7,5 +7,6 @@
 //     .isLength({min:3}).withMessage("First Name must be at least 3 characters long"),
 //     body('last_name').notEmpty().withMessage("Last Name is Required")
 //     .isLength({min:3}).withMessage("Last Name must be at least 3 characters long"),,
-//     body('age').isNumeric().withMessage("")   
+//     body('age').isInt(18).isNumeric().withMessage(""),
+//     body('')
 // ]

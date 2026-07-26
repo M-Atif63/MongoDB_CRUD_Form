@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-
+import mongoosePluginate from 'mongoose-paginate-v2'
 const studentSchema = new Schema({
     first_name:{type:String,required:true},
     last_name:{type:String,required:true},
@@ -11,6 +11,9 @@ const studentSchema = new Schema({
     address:{type:String,required:true},
     gender:{type:String,required:true}
 },{timestamps:true})
+
+
+studentSchema.plugin(mongoosePluginate)
 
 const Student = mongoose.model("Student",studentSchema)
 

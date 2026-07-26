@@ -5,6 +5,7 @@ import Student from "../model/student.Schema.js"
 export const students = async (req, res) => {
     try {
         const studentsData = await Student.find()
+        // const stuData = 
         res.render('students', { studentsData })
     }
     catch (error) {
