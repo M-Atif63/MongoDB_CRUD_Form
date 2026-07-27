@@ -4,9 +4,27 @@ import Student from "../model/student.Schema.js"
 
 export const students = async (req, res) => {
     try {
-        const studentsData = await Student.find()
-        // const stuData = 
-        res.render('students', { studentsData })
+        const {page = 1 , limit = 4 } = req.query
+
+        const query = {
+            page: parseInt(page),
+            limit: parseInt(limit)
+        }
+
+        const data = await Student.paginate({}, query)
+        // res.send(data)
+        res.render('students', {
+            totalDocs: data.totalDocs,
+            limit: data.limit,
+            totalPages: data.totalPages,
+            currentPage: data.page,
+            pagingCounter: data.pagingCounter,
+            hasPrevPage: data.hasPrevPage,
+            hasNextPage: data.hasNextPage,
+            prevPage: data.prevPage,
+            nextPage: data.nextPage,
+            studentsData : data.docs
+        })
     }
     catch (error) {
         res.send(error.message)
@@ -25,7 +43,7 @@ export const showStudentPage = async (req, res) => {
         if (!studentData) return res.render('pageNotFound', { message: "Student Not Found" })
         res.render('student', { studentData })
     }
-    catch(error){
+    catch (error) {
         res.render('ISE', { error: error })
     }
 }
@@ -53,11 +71,11 @@ export const addStudents = async (req, res) => {
 
 
 export const updateStudentsPage = async (req, res) => {
-    
+
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         res.render('pageNotFound', { message: "Invalid Id" })
     }
-    
+
     try {
         const studentId = await Student.findById(req.params.id)
         if (!studentId) return res.render('pageNotFound', { message: "Student Not Found" })
@@ -68,27 +86,27 @@ export const updateStudentsPage = async (req, res) => {
 }
 
 export const updateStudents = async (req, res) => {
-    
+
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         res.render('pageNotFound', { message: "Invalid Id" })
     }
-    
+
     try {
         const student = await Student.findByIdAndUpdate(req.params.id, req.body)
         if (!student) return res.render('pageNotFound', { message: "Student Not Found" })
         res.redirect('/students')
     } catch (error) {
         res.status(500).send(error.messsage)
-    }   
+    }
 }
 
 
 export const deleteStudent = async (req, res) => {
-    
+
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         res.render('pageNotFound', { message: "Invalid Id" })
     }
-    
+
     try {
         const { id } = req.params
         const student = await Student.findByIdAndDelete(id);

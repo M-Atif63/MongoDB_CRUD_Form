@@ -14,10 +14,12 @@
     padding:10px 18px;
     border-radius:8px;
     font-weight:600;
-}
+}   
 
 .add-btn:hover{
     background:#0b5ed7;
+    color:white;
+    text-decoration: none;
 }
 
 .table-container{
